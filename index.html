@@ -2,9 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Нескучные налоги — A1 по Польше</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Нескучные налоги — A1 по Польше</title>
 
+    <!-- Подключение стилей -->
     <link rel="stylesheet" href="/font (2)/stylesheet.css" />
     <link rel="stylesheet" href="/Dela_Gothic_One/DelaGothicOne.css" />
     <link rel="stylesheet" href="/style.css" />
@@ -136,7 +137,11 @@
               </p>
             </div>
             <div class="a1-info-img">
-              <img src="/image/Druk-A1-ZUS-head-1.jpg" alt="Пример формы A1" />
+              <img
+                src="/image/Druk-A1-ZUS-head-1.jpg"
+                alt="Пример формы A1"
+                onerror="this.onerror=null; this.src='https://placehold.co/375x250/d1bfae/888888?text=Image+Error';"
+              />
             </div>
           </div>
         </div>
@@ -280,7 +285,7 @@
         </div>
       </section>
 
-      <section class="faq-section">
+      <section id="faq" class="faq-section">
         <div class="container faq-container">
           <h2>ПОПУЛЯРНЫЕ ВОПРОСЫ</h2>
           <div class="faq-list">
@@ -296,8 +301,8 @@
             </div>
             <div class="faq-item">
               <b
-                >У нас нету вообще оборота по Польше, мы сосредоточены на
-                стране, в которой работаем. Поможете?</b
+                >У нас нет у вообще оборота по Польше, мы сосредоточены на
+                стране, в которой р аботаем. Поможете?</b
               >
               <p>
                 Да. Мы можем помочь вам решить проблему с оборотом, даже если
@@ -375,9 +380,15 @@
     </footer>
 
     <script>
-      // --- Динамическое обновление года в подвале ---
+      // Динамическое обновление года
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
+
+      // Управление мобильным меню
+      const mobileMenu = document.getElementById("mobileMenu");
+      function toggleMobileMenu() {
+        document.body.classList.toggle("mobile-menu-open");
+      }
 
       // --- Плавный скролл для якорных ссылок ---
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -423,7 +434,7 @@
       }
 
       // --- Управление мобильным меню ---
-      const mobileMenu = document.getElementById("mobileMenu");
+      // (Переменная mobileMenu уже объявлена выше)
       function toggleMobileMenu() {
         // Переключаем класс на body для управления состоянием меню
         document.body.classList.toggle("mobile-menu-open");
